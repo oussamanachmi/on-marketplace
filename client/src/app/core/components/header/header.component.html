@@ -1,0 +1,20 @@
+<!-- 🔹 Header -->
+<mat-toolbar color="primary" class="header">
+    <span class="logo pointer" [routerLink]="['']">🛍️ On Marketplace</span>
+
+    <span class="spacer"></span>
+
+    <!-- Search bar -->
+    <mat-form-field appearance="outline" class="search-bar">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput placeholder="Rechercher un produit..." [(ngModel)]="search" />
+    </mat-form-field>
+
+    <button mat-icon-button [routerLink]="['/cart']">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <button mat-raised-button color="accent" [routerLink]="['/login']">
+        Connexion
+    </button>
+</mat-toolbar>

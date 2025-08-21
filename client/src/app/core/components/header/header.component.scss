@@ -1,0 +1,42 @@
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #020402;
+    color: #fff;
+
+    .logo {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    .search-bar {
+        // width: 300px;
+        margin-right: 1rem;
+
+        mat-icon {
+            color: #fff;
+        }
+
+        input {
+            color: #fff;
+            opacity: 1;
+            background-color: transparent;
+            border: 1px solid #fff;
+            border-radius: 4px;
+
+
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+
+
+    }
+}

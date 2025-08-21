@@ -1,1 +1,37 @@
-<p>products works!</p>
+<!-- 🔹 Hero section -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>Découvrez nos meilleurs produits</h1>
+        <p>Mode, accessoires et bien plus encore.</p>
+        <button mat-raised-button color="primary">Voir les nouveautés</button>
+    </div>
+</div>
+
+<!-- 🔹 Produits -->
+<div class="products-container">
+    @if (products$ | async; as products) {
+    @for (product of products; track product.id) {
+    @if (
+    search === '' ||
+    product.title.toLowerCase().includes(search.toLowerCase())
+    ) {
+    <mat-card class="product-card">
+        <div class="img-wrapper">
+            <img [src]="product.image" alt="{{ product.title }}" />
+        </div>
+        <mat-card-content>
+            <h3>{{ product.title }}</h3>
+            <p class="price">{{ product.price | currency : 'EUR' }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [routerLink]="['/product', product.id]">
+                Voir détails
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    }
+    }
+    } @else {
+    <p class="loading">Chargement des produits...</p>
+    }
+</div>
