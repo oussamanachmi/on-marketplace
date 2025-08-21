@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
 
 
 @Component({
@@ -18,7 +19,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MatInput,
+    MatFormField,
+    MatLabel
   ],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],

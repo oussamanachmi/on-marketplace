@@ -3,8 +3,12 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #020402;
+    background-color: #8447ff;
     color: #fff;
+
+    mat-icon {
+        color: #fff;
+    }
 
     .logo {
         font-weight: bold;
@@ -18,17 +22,28 @@
     .search-bar {
         // width: 300px;
         margin-right: 1rem;
+        height: 40px;
 
-        mat-icon {
-            color: #fff;
+        ::ng-deep .mdc-text-field--outlined {
+            --mdc-outlined-text-field-container-shape: 28px !important;
+            height: 40px;
+            font-size: 13px;
+
+            .mat-mdc-form-field-icon-prefix {
+                padding: 0 4px 10px 0;
+            }
+
+            .mat-mdc-form-field-infix {
+                padding-top: 10px;
+            }
+
+            .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
+                border-color: #fff;
+            }
         }
 
         input {
             color: #fff;
-            opacity: 1;
-            background-color: transparent;
-            border: 1px solid #fff;
-            border-radius: 4px;
 
 
 
@@ -36,7 +51,6 @@
                 color: #fff;
             }
         }
-
 
     }
 }
