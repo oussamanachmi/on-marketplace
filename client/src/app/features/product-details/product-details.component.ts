@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../core/services/products.service';
 import { Product } from '../../core/models/product.model';
-// import { CartService } from '../../core/services/cart.service';
+import { CartService } from '../../core/services/cart.service';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,14 +28,15 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
   styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
-  product!: Product | null;
+  // product!: Product | null;
   selectedImage!: string;
   loading = true;
+  @Input() product!: Product;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductsService,
-    // private cartService: CartService
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
@@ -58,9 +59,7 @@ export class ProductDetailsComponent implements OnInit {
     return rating ? Array(Math.round(rating)).fill(0) : [];
   }
 
-  addToCart(product: Product | null) {
-    if (product) {
-      // this.cartService.addToCart(product);
-    }
+  addToCart(): void {
+    this.cartService.addToCart(this.product, 1);
   }
 }

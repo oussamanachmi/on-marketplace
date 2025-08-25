@@ -28,6 +28,9 @@
             --mdc-outlined-text-field-container-shape: 28px !important;
             height: 40px;
             font-size: 13px;
+            border: 1px solid;
+            border-color: #fff;
+            border-radius: 50px;
 
             .mat-mdc-form-field-icon-prefix {
                 padding: 0 4px 10px 0;
@@ -37,9 +40,6 @@
                 padding-top: 10px;
             }
 
-            .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
-                border-color: #fff;
-            }
         }
 
         input {
@@ -52,5 +52,11 @@
             }
         }
 
+    }
+
+    ::ng-deep .cart-button {
+        .mat-badge {
+            z-index: 9;
+        }
     }
 }
