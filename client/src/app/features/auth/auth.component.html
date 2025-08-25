@@ -1,1 +1,37 @@
-<p>auth works!</p>
+<div class="auth-container">
+    <mat-card class="auth-card">
+        <h1>Se connecter</h1>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <span>johnd</span>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Nom d'utilisateur</mat-label>
+                <input matInput placeholder="Entrez votre nom d'utilisateur" formControlName="username"
+                    autocomplete="username" />
+                @if (loginForm.get('username')?.hasError('required')) {
+                <mat-error>Le nom d'utilisateur est
+                    obligatoire</mat-error>
+                }
+            </mat-form-field>
+            <span>m38rmF$</span>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput type="password" placeholder="Entrez votre mot de passe" formControlName="password"
+                    autocomplete="current-password" />
+                @if (loginForm.get('password')?.hasError('required')) {
+                <mat-error>Le mot de passe est
+                    obligatoire</mat-error>
+                }
+            </mat-form-field>
+            <div class="actions">
+                <button mat-button type="button" class="forgot">Mot de passe oublié ?</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Se
+                    connecter</button>
+            </div>
+
+            @if (errorMsg) {
+            <div class="error">{{ errorMsg }}</div>
+            }
+        </form>
+    </mat-card>
+</div>
